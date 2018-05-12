@@ -31,12 +31,7 @@ AWS Lambdaアプリケーション構築サンプル
 vagrant up
 vagrant provision
 vagarnt ssh
-```
-
-### Dockerコンテナのビルド
-```
 cd /vagrant
-docker build . -t app
 ```
 
 ## 配置
@@ -82,6 +77,18 @@ Lambda 関数を使用してサンプルの関数ペイロードを実行する�
 アプリケーションの削除
 ```bash
 ./dev.sh delete
+```
+
+### Dockerコンテナを使った配置と運用
+dockerコマンド
+```
+docker build . -t app
+docker run --rm -it -v `pwd`:/app:cached  --env-file .env app bash
+```
+docker-composeコマンド
+```
+docker-compose up
+docker-compose exec app bash
 ```
 
 ## 開発
