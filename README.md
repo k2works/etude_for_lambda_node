@@ -40,8 +40,49 @@ docker build . -t app
 ```
 
 ## 配置
+`.env`環境変数ファイルを作成する。
+
+`.env`ファイルはGit管理対象外とする。
+```
+AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxxx
+AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxx
+AWS_DEFAULT_REGION=ap-northeast-1
+```
+
+AWSCLIツールを使えるようにする
+```
+aws configure 
+AWS Access Key ID [None]: xxxxxxxxxxxxxxx
+AWS Secret Access Key [None]: xxxxxxxxxxxxxxxxxxxxxx
+Default region name [None]: ap-northeast-1
+Default output format [None]: json
+```
+
+デプロイ用S3バケットを作成する
+```
+aws s3 mb s3://etude-for-lambda-node
+```
+
+アプリケーションをデプロイする
+```
+./dev.sh deploy
+```
+
+Lambda 関数を使用してサンプルの関数ペイロードを実行する。
+```bash
+./dev.sh invoke helloWorld event.json
+```
 
 ## 運用
+アプリケーションの更新
+```bash
+./dev.sh upload helloWorld
+```
+
+アプリケーションの削除
+```bash
+./dev.sh delete
+```
 
 ## 開発
 ### 開発環境セットアップ

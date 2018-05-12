@@ -5,10 +5,10 @@
 
 # The name of your CloudFormation stack.  Two developers can share a stack by
 # sharing this value, or have their own with different values.
-STACK_NAME="MyProject"
+STACK_NAME="EtudeForLambaNode"
 
 # The name of an S3 bucket on your account to hold deployment artifacts.
-BUILD_ARTIFACT_BUCKET="mys3artifactbucket"
+BUILD_ARTIFACT_BUCKET="etude-for-lambda-node"
 
 # Parameter values for the sam template.  see: `aws cloudformation deploy help`
 PARAMETER_OVERRIDES=""
