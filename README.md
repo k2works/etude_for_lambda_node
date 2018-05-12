@@ -44,6 +44,41 @@ docker build . -t app
 ## 運用
 
 ## 開発
+### 開発環境セットアップ
+nvmをインストールする
+```
+cd /vagrant
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+source ~/.bash_profile 
+```
+
+nodeをインストールする
+```
+nvm install 8.10.0
+nvm use v8.10.0
+```
+
+### npmパッケージのインストール
+```
+npm install
+npm install -g aws-sam-local
+npm install --save-dev husky
+```
+
+### サンプルアプリケーションのテスト
+```
+npm run test
+```
+
+### サンプルアプリケーションのビルド
+```
+npm run build
+```
+
+### Lambda 関数を使用してサンプルの関数ペイロードをローカルでテストする。
+```
+sam local invoke HelloWorldFunction -t infrastructure/sam.yaml -e event.json 
+```
 
 
 # 参照
