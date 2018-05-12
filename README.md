@@ -33,11 +33,18 @@ vagrant provision
 vagarnt ssh
 ```
 
+### Dockerコンテナのビルド
+```
+cd /vagrant
+docker build . -t app
+```
+
 ## 配置
 
 ## 運用
 
 ## 開発
+
 
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)

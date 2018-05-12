@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    build: .
+    command: 'sh -c "trap : TERM INT; sleep infinity & wait"'
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    volumes:
+      - .:/app:cached
+    env_file: .env
