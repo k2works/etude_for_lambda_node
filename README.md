@@ -26,6 +26,12 @@ AWS Lambdaアプリケーション構築サンプル
 1. [開発](#開発 )
   
 ## 構築
+### 開発用仮想マシンのプロビジョニング
+```
+vagrant up
+vagrant provision
+vagarnt ssh
+```
 
 ## 配置
 
@@ -36,3 +42,4 @@ AWS Lambdaアプリケーション構築サンプル
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)
 + [SAM Local (Beta)](https://github.com/awslabs/aws-sam-local)
++ [AWS EC2 Amazon LinuxでDocker, Docker Composeをインストールする](https://qiita.com/shinespark/items/a8019b7ca99e4a30d286)

@@ -11,3 +11,10 @@ npm-debug.log*
 
 # Build output
 dist/
+### Vagrant template
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.logs
+
