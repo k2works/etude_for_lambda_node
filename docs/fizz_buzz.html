@@ -485,6 +485,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>&#10003; 2ならば２を返す</p>
 </li>
+<li>
+<p>&#10003; 3ならばFizzを返す</p>
+</li>
 </ul>
 </div>
 </div>
@@ -515,11 +518,17 @@ describe("A FizzBuzz generator", () =&gt; {
         chai.expect(result).to.equal(1);
     });
 
-    it('should return the number 2 when 2 is played', () =&gt; {
+    it("should return the number 2 when 2 is played", () =&gt; {
         var fizzBuzz = new FizzBuzz();
         var result = fizzBuzz.generate(2);
         chai.expect(result).to.equal(2);
-    })
+    });
+
+    it('should return "Fizz" when 3 is played', () =&gt; {
+        var fizzBuzz = new FizzBuzz();
+        var result = fizzBuzz.generate(3);
+        chai.expect(result).to.equal('Fizz');
+    } )
 });</code></pre>
 </div>
 </div>
@@ -529,7 +538,10 @@ describe("A FizzBuzz generator", () =&gt; {
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">class FizzBuzz {
-    generate(input){
+    generate(input) {
+        if (input === 3) {
+            return "Fizz";
+        }
         return input;
     }
 }
@@ -549,7 +561,7 @@ export default FizzBuzz;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-05-15 13:59:18 JST
+Last updated 2018-05-15 14:05:49 JST
 </div>
 </div>
 </body>

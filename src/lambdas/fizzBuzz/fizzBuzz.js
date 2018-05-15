@@ -1,5 +1,8 @@
 class FizzBuzz {
-    generate(input){
+    generate(input) {
+        if (input === 3) {
+            return "Fizz";
+        }
         return input;
     }
 }
