@@ -4,6 +4,14 @@ AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: Example project
 Resources:
+  FizzBuzzFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../dist/fizzBuzz/fizzBuzz.zip
+      Handler: index.handler
+      Runtime: nodejs8.10
+      MemorySize: 128
+      Timeout: 30 # seconds, 300 max
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
