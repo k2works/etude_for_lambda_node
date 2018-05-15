@@ -1,0 +1,63 @@
+:toc: left
+:toclevels: 5
+:sectnums:
+
+= FizzBuzz
+
+== 仕様
+* ３で割り切れる場合は「Fizz」を出力する。
+* ５で割り切れる場合は「Buzz」を出力する。
+* 両者で割り切れる場合は「FizzBuzz」を出力する。
+
+== 設計
+=== TODOリスト
+* [*] 1ならば１を返す
+* [*] 2ならば２を返す
+* [*] 3ならばFizzを返す
+* [*] 6ならばFizzを返す
+* [*] 5ならばBuzzを返す
+* [*] 10ならばBuzzを返す
+* [*] 15ならばFizzBuzzを返す
+* [*] 30ならばFizzBuzzを返す
+
+=== クラス図
+[plantuml]
+----
+class FizzBuzz{
++ generate()
+}
+----
+
+== 実装
+=== テストコード
+[source,javascript]
+----
+include::../../src/lambdas/fizzBuzz/fizzBuzz.test.js[]
+----
+
+=== プロダクトコード
+[source,javascript]
+----
+include::../../src/lambdas/fizzBuzz/fizzBuzz.js[]
+----
+
+== 配置
+ローカル実行
+```
+sam local invoke FizzBuzzFunction -t infrastructure/sam.yaml -e event.json
+```
+デプロイ
+```
+./dev.sh deploy
+```
+Lambda 関数を使用してサンプルの関数ペイロードを実行する。
+```bash
+./dev.sh invoke fizzBuzz event.json
+```
+
+アプリケーションの削除
+```bash
+./dev.sh delete
+```
+
+== 参照
