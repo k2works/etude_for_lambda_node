@@ -1,4 +1,4 @@
-import FizzBuzz from "./fizzBuzz";
+import FizzBuzz from "../../lib/fizzBuzz/fizzBuzz";
 
 console.log("Loading function");
 
