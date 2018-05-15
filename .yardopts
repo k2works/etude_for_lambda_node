@@ -3,4 +3,4 @@
 lib/**/*.rb
 -
 docs/index.html
-
+docs/fizz_buzz.html

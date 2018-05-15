@@ -1,0 +1,13 @@
+:toc: left
+:toclevels: 5
+:sectnums:
+
+= FizzBuzz
+
+== 仕様
+
+== 設計
+
+== 実装
+
+== 参照
