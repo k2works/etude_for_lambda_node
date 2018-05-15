@@ -5,9 +5,33 @@
 = FizzBuzz
 
 == 仕様
+* ３で割り切れる場合は「Fizz」を出力する。
+* ５で割り切れる場合は「Buzz」を出力する。
+* 両者で割り切れる場合は「FizzBuzz」を出力する。
 
 == 設計
+=== TODOリスト
+* [ ] 1ならば１を返す
+
+=== クラス図
+[plantuml]
+----
+class FizzBuzz{
++ generate()
+}
+----
 
 == 実装
+=== テストコード
+[source,javascript]
+----
+include::../../src/lambdas/fizzBuzz/fizzBuzz.test.js[]
+----
+
+=== プロダクトコード
+[source,javascript]
+----
+include::../../src/lambdas/fizzBuzz/fizzBuzz.js[]
+----
 
 == 参照

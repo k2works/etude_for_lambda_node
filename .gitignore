@@ -18,3 +18,4 @@ dist/
 # Log files (if you are creating logs in debug mode, uncomment this)
 # *.logs
 .env
+docs/.asciidoctor
