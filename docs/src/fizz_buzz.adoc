@@ -41,4 +41,23 @@ include::../../src/lambdas/fizzBuzz/fizzBuzz.test.js[]
 include::../../src/lambdas/fizzBuzz/fizzBuzz.js[]
 ----
 
+== 配置
+ローカル実行
+```
+sam local invoke FizzBuzzFunction -t infrastructure/sam.yaml -e event.json
+```
+デプロイ
+```
+./dev.sh deploy
+```
+Lambda 関数を使用してサンプルの関数ペイロードを実行する。
+```bash
+./dev.sh invoke fizzBuzz event.json
+```
+
+アプリケーションの削除
+```bash
+./dev.sh delete
+```
+
 == 参照

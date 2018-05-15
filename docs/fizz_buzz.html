@@ -449,7 +449,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_プロダクトコード">3.2. プロダクトコード</a></li>
 </ul>
 </li>
-<li><a href="#_参照">4. 参照</a></li>
+<li><a href="#_配置">4. 配置</a></li>
+<li><a href="#_参照">5. 参照</a></li>
 </ul>
 </div>
 </div>
@@ -606,7 +607,44 @@ export default FizzBuzz;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_参照">4. 参照</h2>
+<h2 id="_配置">4. 配置</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ローカル実行</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sam local invoke FizzBuzzFunction -t infrastructure/sam.yaml -e event.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>デプロイ</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>./dev.sh deploy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Lambda 関数を使用してサンプルの関数ペイロードを実行する。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">./dev.sh invoke fizzBuzz event.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>アプリケーションの削除</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">./dev.sh delete</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参照">5. 参照</h2>
 <div class="sectionbody">
 
 </div>
@@ -614,7 +652,7 @@ export default FizzBuzz;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-05-15 14:31:45 JST
+Last updated 2018-05-15 15:10:31 JST
 </div>
 </div>
 </body>
