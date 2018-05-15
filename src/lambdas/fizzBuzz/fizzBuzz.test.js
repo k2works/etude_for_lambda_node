@@ -7,4 +7,10 @@ describe("A FizzBuzz generator", () => {
         var result = fizzBuzz.generate(1);
         chai.expect(result).to.equal(1);
     });
+
+    it('should return the number 2 when 2 is played', () => {
+        var fizzBuzz = new FizzBuzz();
+        var result = fizzBuzz.generate(2);
+        chai.expect(result).to.equal(2);
+    })
 });
