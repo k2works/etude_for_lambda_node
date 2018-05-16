@@ -140,6 +140,8 @@ npm install --save-dev cross-env
 ### Reactのセットアップ
 ```
 npm install --save-dev webpack-dev-server
+npm install --save-dev react react-dom
+npm install --save-dev babel-preset-react
 ```
 
 # 参照
