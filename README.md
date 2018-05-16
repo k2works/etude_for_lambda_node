@@ -128,6 +128,14 @@ npm run build
 sam local invoke HelloWorldFunction -t infrastructure/sam.yaml -e event.json 
 ```
 
+### Expressのセットアップ
+```
+npm install express compression
+npm install --save-dev nodemon
+npm install --save-dev pm2
+npm install --save-dev rimraf
+npm install --save-dev cross-env
+```
 
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)
