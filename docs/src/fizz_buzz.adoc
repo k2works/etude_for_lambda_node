@@ -32,27 +32,32 @@ class FizzBuzz{
 === テストコード
 [source,javascript]
 ----
-include::../../src/lambdas/fizzBuzz/fizzBuzz.test.js[]
+include::../../src/lib/fizzBuzz/fizzBuzz.test.js[]
 ----
 
 === プロダクトコード
 [source,javascript]
 ----
-include::../../src/lambdas/fizzBuzz/fizzBuzz.js[]
+include::../../src/lib/fizzBuzz/fizzBuzz.js[]
 ----
 
 == 配置
 ローカル実行
 ```
-sam local invoke FizzBuzzFunction -t infrastructure/sam.yaml -e event.json
+sam local invoke FizzBuzzFunction -t infrastructure/sam.yaml -e src/lambdas/fizzBuzz/event.json
 ```
+apiローカル実行
+```
+sam local start-api -t infrastructure/sam.yaml
+```
+
 デプロイ
 ```
 ./dev.sh deploy
 ```
 Lambda 関数を使用してサンプルの関数ペイロードを実行する。
 ```bash
-./dev.sh invoke fizzBuzz event.json
+./dev.sh invoke fizzBuzz ./src/lambdas/fizzBuzz/event.json
 ```
 
 アプリケーションの削除

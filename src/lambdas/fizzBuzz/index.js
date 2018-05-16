@@ -1,27 +1,25 @@
+"use strict";
 import FizzBuzz from "../../lib/fizzBuzz/fizzBuzz";
 
-console.log("Loading function");
+exports.handler = (event, context, callback) => {
 
-exports.handler = function(event, context, callback) {
-    //console.log('Received event:', JSON.stringify(event, null, 2));
-    console.log("value1 =", event.key1);
-    console.log("value2 =", event.key2);
-    console.log("value3 =", event.key3);
-    console.log("remaining time =", context.getRemainingTimeInMillis());
-    console.log("functionName =", context.functionName);
-    console.log("AWSrequestID =", context.awsRequestId);
-    console.log("logGroupName =", context.logGroupName);
-    console.log("logStreamName =", context.logStreamName);
-    //callback(null, event.key1); // Echo back the first key value
-    // or
-    // callback("some error type");
+    let number =  (event.pathParameters || {}).number || false;
+    let fizzBuzz = new FizzBuzz;
+    switch(event.httpMethod){
 
-    let fizzBuzz = new FizzBuzz();
-    let result = fizzBuzz.generate(1);
-    console.log("result1 =", result);
-    console.log("result2 =", fizzBuzz.generate(3));
-    console.log("result3 =", fizzBuzz.generate(5));
-    console.log("result4 =", fizzBuzz.generate(15));
-    console.log("result5 =", fizzBuzz.generate(event.key1));
-    callback(null, fizzBuzz.generate(15));
+    case "GET":
+        console.log(event.pathParameters);
+        if(number) {
+            callback(null, {body: fizzBuzz.generate(number)});
+            return;
+        }
+
+        callback(null, {body: "No number"});
+        break;
+    default:
+        // Send HTTP 501: Not Implemented
+        console.log("Error: unsupported HTTP method (" + event.httpMethod + ")");
+        callback(null, { statusCode: 501 });
+
+    }
 };
