@@ -137,6 +137,11 @@ npm install --save-dev rimraf
 npm install --save-dev cross-env
 ```
 
+### Reactのセットアップ
+```
+npm install --save-dev webpack-dev-server
+```
+
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)
 + [SAM Local (Beta)](https://github.com/awslabs/aws-sam-local)

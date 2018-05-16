@@ -9,8 +9,9 @@
     "test": "mocha --recursive --throw-deprecation --require babel-core/register --require babel-polyfill \"src/**/*.test.js\"",
     "precommit": "npm run lint & npm run test",
     "prepush": "npm run build",
-    "start": "babel-node src/server",
+    "start": "npm run dev:start",
     "dev:start": "nodemon --ignore dist/lib --exec babel-node src/server",
+    "dev:wds": "webpack-dev-server --progress --config webpack.config.babel.js",
     "prod:build": "rimraf dist/app && babel src -d dist/app --ignore lambdas,.test.js",
     "prod:start": "cross-env NODE_ENV=production pm2 start dist/app/server && pm2 logs",
     "prod:stop": "pm2 delete server"
