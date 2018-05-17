@@ -138,13 +138,20 @@ npm install --save-dev cross-env
 ```
 
 ### Reactのセットアップ
+webpack & React
 ```
 npm install --save-dev webpack-dev-server
 npm install --save-dev react react-dom
 npm install --save-dev babel-preset-react
 ```
 
+Hot Module Replacement
+```
+npm install --save-dev react-hot-loader@next
+```
+
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)
 + [SAM Local (Beta)](https://github.com/awslabs/aws-sam-local)
 + [AWS EC2 Amazon LinuxでDocker, Docker Composeをインストールする](https://qiita.com/shinespark/items/a8019b7ca99e4a30d286)
++ [JavaScript Stack from Scratch](https://github.com/verekia/js-stack-from-scratch/)
