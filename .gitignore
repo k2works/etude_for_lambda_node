@@ -20,3 +20,5 @@ dist/
 .env
 docs/.asciidoctor
 .yardoc
+
+app/app

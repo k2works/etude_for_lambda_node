@@ -155,3 +155,9 @@ npm install --save-dev react-hot-loader@next
 + [SAM Local (Beta)](https://github.com/awslabs/aws-sam-local)
 + [AWS EC2 Amazon LinuxでDocker, Docker Composeをインストールする](https://qiita.com/shinespark/items/a8019b7ca99e4a30d286)
 + [JavaScript Stack from Scratch](https://github.com/verekia/js-stack-from-scratch/)
++ [AWS Serverless Express](https://github.com/awslabs/aws-serverless-express)
+
+
+npm run config -- \
+--account-id="411087959999" \
+--bucket-name="etude-for-lambda-node-aws-serverless-express" \

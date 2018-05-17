@@ -12,8 +12,8 @@
     "start": "npm run dev:start",
     "dev:start": "nodemon --ignore dist/app --exec babel-node src/app/server",
     "dev:wds": "webpack-dev-server --progress --config webpack.config.babel.js",
-    "prod:build": "rimraf dist/app  && babel src -d dist --ignore lambdas,lib,.test.js && cross-env NODE_ENV=production webpack -p --progress --config webpack.config.babel.js",
-    "prod:start": "cross-env NODE_ENV=production pm2 start dist/app/server && pm2 logs",
+    "prod:build": "rimraf app/app  && babel src -d app --ignore lambdas,lib,.test.js && cross-env NODE_ENV=production webpack -p --progress --config webpack.config.babel.js",
+    "prod:start": "cross-env NODE_ENV=production pm2 start app/app/server && pm2 logs",
     "prod:stop": "pm2 delete server"
   },
   "repository": {
