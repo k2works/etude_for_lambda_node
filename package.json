@@ -7,7 +7,7 @@
     "clean": "rimraf ./dist",
     "lint": "eslint \"src/**/*.js\"",
     "test": "mocha --recursive --throw-deprecation --require babel-core/register --require babel-polyfill \"src/**/*.test.js\"",
-    "precommit": "npm run lint & npm run test",
+    "precommit": "npm run lint && npm run test",
     "prepush": "npm run build",
     "start": "npm run dev:start",
     "dev:start": "nodemon --ignore dist/app --exec babel-node src/app/server",

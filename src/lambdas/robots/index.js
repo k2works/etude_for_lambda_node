@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "babel-polyfill";
 import * as cassava from "cassava";
 
@@ -25,7 +26,7 @@ router.route("/robots")
     .handler(evt => {
         return {
             body: Object.keys(robots).map(key => robots[key])
-        }
+        };
     });
 
 router.route("/robots/{robot}")
@@ -62,7 +63,7 @@ router.route("/robots/{robot}")
         return {
             statusCode: cassava.httpStatusCode.success.NO_CONTENT,
             body: null
-        }
+        };
     });
 
 router.route("/robots/{robot}")
@@ -77,7 +78,7 @@ router.route("/robots/{robot}")
         return {
             statusCode: cassava.httpStatusCode.success.NO_CONTENT,
             body: null
-        }
+        };
     });
 
 /**
