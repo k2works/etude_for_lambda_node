@@ -1,16 +1,16 @@
 import path from "path";
 
-import { WDS_PORT } from "./src/shared/config";
-import { isProd } from "./src/shared/util";
+import { WDS_PORT } from "./src/app/shared/config";
+import { isProd } from "./src/app/shared/util";
 
 export default {
     entry: [
-        "./src/client",
+        "./src/app/client",
     ],
     output: {
-        filename: "js/bundle.js",
+        filename: "app/bundle.js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: isProd ? "/static/" : `http://localhost:${WDS_PORT}/dist/`,
+        publicPath: isProd ? "/static/app/" : `http://localhost:${WDS_PORT}/dist/`,
     },
     module: {
         rules: [
