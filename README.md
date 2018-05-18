@@ -150,6 +150,16 @@ Hot Module Replacement
 npm install --save-dev react-hot-loader@next
 ```
 
+Redux, Immutable, and Fetch
+```
+npm install --save-dev immutable redux redux-actions react-redux isomorphic-fetch isomorphic-fetch redux-thunk
+```
+
+Testing
+```
+npm install --save-dev jest redux-mock-store fetch-mock
+```
+
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)
 + [SAM Local (Beta)](https://github.com/awslabs/aws-sam-local)
