@@ -9,6 +9,9 @@
     "sourceType": "module",
     "ecmaVersion": 2017
   },
+  "settings": {
+    "polyfills": ["fetch"]
+  },
   "rules": {
     "indent": [
       "error",
