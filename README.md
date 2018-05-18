@@ -111,6 +111,7 @@ nvm use v8.10.0
 npm install
 npm install -g aws-sam-local
 npm install --save-dev husky
+npm install --save-dev babel-preset-env
 ```
 
 ### サンプルアプリケーションのテスト

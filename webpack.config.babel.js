@@ -3,8 +3,11 @@ import webpack from "webpack";
 
 import { WDS_PORT } from "./src/app/shared/config";
 import { isProd } from "./src/app/shared/util";
+const env = process.env.NODE_ENV;
 
 export default {
+    mode: env || 'development',
+
     entry: [
         "react-hot-loader/patch",
         "./src/app/client",

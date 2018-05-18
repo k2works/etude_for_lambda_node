@@ -2,6 +2,7 @@ import "isomorphic-fetch";
 
 import { createAction } from "redux-actions";
 import { helloEndpointRoute } from "../../shared/routes";
+import { isProd } from "../../shared/util";
 
 export const SAY_HELLO = "SAY_HELLO";
 export const SAY_HELLO_ASYNC_REQUEST = "SAY_HELLO_ASYNC_REQUEST";
@@ -15,7 +16,8 @@ export const sayHelloAsyncFailure = createAction(SAY_HELLO_ASYNC_FAILURE);
 
 export const sayHelloAsync = (num) => (dispatch) => {
     dispatch(sayHelloAsyncRequest());
-    return fetch(helloEndpointRoute(num), { method: "GET" })
+    const url = isProd ? `/prod${helloEndpointRoute(num)}` : helloEndpointRoute(num);
+    return fetch(url, { method: "GET" })
         .then((res) => {
             if (!res.ok) throw Error(res.statusText);
             return res.json();
