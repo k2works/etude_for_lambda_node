@@ -163,7 +163,7 @@ npm install --save-dev jest redux-mock-store fetch-mock
 
 React Router, Server-Side Rendering, and Helmet
 ```
-npm install --save-dev react-router react-router-dom
+npm install --save-dev react-router react-router-dom react-helmet
 ```
 
 # 参照
