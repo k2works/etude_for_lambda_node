@@ -161,6 +161,11 @@ Testing
 npm install --save-dev jest redux-mock-store fetch-mock
 ```
 
+React Router, Server-Side Rendering, and Helmet
+```
+npm install --save-dev react-router react-router-dom
+```
+
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)
 + [SAM Local (Beta)](https://github.com/awslabs/aws-sam-local)
