@@ -141,8 +141,8 @@ npm install --save-dev cross-env
 ### Reactのセットアップ
 webpack & React
 ```
+npm install --save react react-dom
 npm install --save-dev webpack-dev-server
-npm install --save-dev react react-dom
 npm install --save-dev babel-preset-react
 ```
 
@@ -153,7 +153,7 @@ npm install --save-dev react-hot-loader@next
 
 Redux, Immutable, and Fetch
 ```
-npm install --save-dev immutable redux redux-actions react-redux isomorphic-fetch isomorphic-fetch redux-thunk
+npm install --save immutable redux redux-actions react-redux isomorphic-fetch isomorphic-fetch redux-thunk
 ```
 
 Testing
@@ -163,7 +163,7 @@ npm install --save-dev jest redux-mock-store fetch-mock
 
 React Router, Server-Side Rendering, and Helmet
 ```
-npm install --save-dev react-router react-router-dom react-helmet
+npm install --save react-router react-router-dom react-helmet
 ```
 
 # 参照
