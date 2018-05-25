@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Example hello world Lambda function.  This is the function AWS will invoke.
  */
