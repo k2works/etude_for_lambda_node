@@ -614,7 +614,15 @@ export default FizzBuzz;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>sam local invoke FizzBuzzFunction -t infrastructure/sam.yaml -e event.json</code></pre>
+<pre class="highlight"><code>sam local invoke FizzBuzzFunction -t infrastructure/sam.yaml -e src/lambdas/fizzBuzz/event.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>apiローカル実行</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sam local start-api -t infrastructure/sam.yaml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -630,7 +638,7 @@ export default FizzBuzz;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">./dev.sh invoke fizzBuzz event.json</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">./dev.sh invoke fizzBuzz ./src/lambdas/fizzBuzz/event.json</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -652,7 +660,7 @@ export default FizzBuzz;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-05-15 15:10:31 JST
+Last updated 2018-05-16 16:53:37 JST
 </div>
 </div>
 </body>

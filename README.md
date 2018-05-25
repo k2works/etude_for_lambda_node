@@ -111,6 +111,7 @@ nvm use v8.10.0
 npm install
 npm install -g aws-sam-local
 npm install --save-dev husky
+npm install --save-dev babel-preset-env
 ```
 
 ### サンプルアプリケーションのテスト
@@ -128,8 +129,57 @@ npm run build
 sam local invoke HelloWorldFunction -t infrastructure/sam.yaml -e event.json 
 ```
 
+### Expressのセットアップ
+```
+npm install express compression
+npm install --save-dev nodemon
+npm install --save-dev pm2
+npm install --save-dev rimraf
+npm install --save-dev cross-env
+```
+
+### Reactのセットアップ
+webpack & React
+```
+npm install --save react react-dom
+npm install --save-dev webpack-dev-server
+npm install --save-dev babel-preset-react
+```
+
+Hot Module Replacement
+```
+npm install --save-dev react-hot-loader@next
+```
+
+Redux, Immutable, and Fetch
+```
+npm install --save immutable redux redux-actions react-redux isomorphic-fetch isomorphic-fetch redux-thunk
+```
+
+Testing
+```
+npm install --save-dev jest redux-mock-store fetch-mock
+```
+
+React Router, Server-Side Rendering, and Helmet
+```
+npm install --save react-router react-router-dom react-helmet
+```
+
+Twitter Bootstrap
+```
+npm install --save bootstrap@4.0.0-alpha.6
+npm install --save jquery tether popper.js
+```
+
+JSS
+```
+npm install --save react-jss
+```
 
 # 参照
 + [sam-scaffold](https://github.com/Giftbit/sam-scaffold)
 + [SAM Local (Beta)](https://github.com/awslabs/aws-sam-local)
 + [AWS EC2 Amazon LinuxでDocker, Docker Composeをインストールする](https://qiita.com/shinespark/items/a8019b7ca99e4a30d286)
++ [JavaScript Stack from Scratch](https://github.com/verekia/js-stack-from-scratch/)
++ [AWS Serverless Express](https://github.com/awslabs/aws-serverless-express)
