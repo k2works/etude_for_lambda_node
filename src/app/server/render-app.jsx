@@ -40,7 +40,7 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(store.getState())}
         </script>
-        <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/app`}/app/bundle.js"></script>
+        <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/dist`}/app/bundle.js"></script>
       </body>
     </html>`
     )

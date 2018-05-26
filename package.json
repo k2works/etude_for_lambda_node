@@ -1,7 +1,22 @@
 {
-  "name": "sam-scaffold",
+  "name": "etude-for-lambda-node",
   "version": "1.0.0",
   "description": "Example project description.",
+  "main": "lambda.js",
+  "config": {
+    "s3BucketName": "etude-for-lambda-node-aws-serverless-express",
+    "region": "us-east-1",
+    "cloudFormationStackName": "AwsServerlessExpressStack",
+    "functionName": "AwsServerlessExpressFunction",
+    "accountId": "411087959999"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/vendor"
+    ],
+    "testRegex": "\\.test\\.js"
+  },
   "scripts": {
     "build": "webpack",
     "clean": "rimraf ./dist",
@@ -10,11 +25,26 @@
     "precommit": "npm run lint && npm run test",
     "prepush": "npm run build",
     "start": "npm run dev:start",
-    "dev:start": "nodemon --ignore dist/app --exec babel-node src/app/server",
-    "dev:wds": "webpack-dev-server --progress --config webpack.config.babel.js",
-    "prod:build": "rimraf app/app  && babel src -d app --ignore lambdas,lib,.test.js && cross-env NODE_ENV=production webpack -p --progress --config webpack.config.babel.js",
-    "prod:start": "cross-env NODE_ENV=production pm2 start app/app/server && pm2 logs",
-    "prod:stop": "pm2 delete server"
+    "dev:start": "nodemon --ignore dist/app --exec node --inspect --require babel-register src/app/server",
+    "dev:wds": "cross-env NODE_ENV=development webpack-dev-server --progress --config webpack.config.babel.js",
+    "prod:build": "rimraf dist/app  && babel src -d dist --ignore lambdas,lib,.test.js && cross-env NODE_ENV=production webpack -p --progress --config webpack.config.babel.js",
+    "prod:start": "cross-env NODE_ENV=production pm2 start dist/app/server && pm2 logs",
+    "prod:stop": "pm2 delete server",
+    "config": "node ./scripts/configure.js",
+    "deconfig": "node ./scripts/deconfigure.js",
+    "invoke-lambda": "aws lambda invoke --function-name $npm_package_config_functionName --region $npm_package_config_region --payload file://api-gateway-event.json lambda-invoke-response.json && cat lambda-invoke-response.json",
+    "create-bucket": "aws s3 mb s3://$npm_package_config_s3BucketName --region $npm_package_config_region",
+    "delete-bucket": "aws s3 rb s3://$npm_package_config_s3BucketName --region $npm_package_config_region",
+    "upload-assets": "npm run upload-assets-js && npm run upload-assets-css",
+    "upload-assets-js": "aws s3 cp dist/app/bundle.js s3://$npm_package_config_s3BucketName/assets/app/bundle.js --region $npm_package_config_region --grants full=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "upload-assets-css": "aws s3 cp public/css/ s3://$npm_package_config_s3BucketName/assets/css/ --recursive --region $npm_package_config_region --grants full=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "package": "aws cloudformation package --template ./cloudformation.yaml --s3-bucket $npm_package_config_s3BucketName --output-template packaged-sam.yaml --region $npm_package_config_region",
+    "deploy": "aws cloudformation deploy --template-file packaged-sam.yaml --stack-name $npm_package_config_cloudFormationStackName --capabilities CAPABILITY_IAM --region $npm_package_config_region",
+    "package-deploy": "npm run prod:build && npm run install-npm && npm run upload-assets && npm run package && npm run deploy",
+    "delete-stack": "aws cloudformation delete-stack --stack-name $npm_package_config_cloudFormationStackName --region $npm_package_config_region",
+    "setup": "(aws s3api get-bucket-location --bucket $npm_package_config_s3BucketName --region $npm_package_config_region || npm run create-bucket) && npm run package-deploy",
+    "install-npm": "cp package.json package-lock.json ./dist/app && cd ./dist/app && npm install && npm run install-patch",
+    "install-patch": "find ./node_modules/* -mtime +10950 -exec touch {} \\;"
   },
   "repository": {
     "type": "git",
@@ -62,14 +92,18 @@
     "zip-webpack-plugin": "^3.0.0"
   },
   "dependencies": {
+    "aws-serverless-express": "^3.0.0",
+    "body-parser": "^1.17.1",
     "bootstrap": "^4.0.0-alpha.6",
     "cassava": "^2.0.1",
+    "cors": "^2.8.3",
     "compression": "^1.7.2",
     "express": "^4.16.3",
     "immutable": "^3.8.2",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
+    "pug": "^2.0.0-rc.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
