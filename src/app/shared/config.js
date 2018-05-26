@@ -1,5 +1,7 @@
+import {isProd} from "./util";
+
 export const WEB_PORT = process.env.PORT || 8000;
-export const STATIC_PATH = "https://s3.amazonaws.com/etude-for-lambda-node-aws-serverless-express/assets";
+export const STATIC_PATH = isProd ? "https://s3.amazonaws.com/etude-for-lambda-node-aws-serverless-express/assets" : "/static";
 export const APP_NAME = "Hello App";
 
 export const WDS_PORT = 7000;

@@ -14,8 +14,8 @@ export default {
     ],
     output: {
         filename: "app/bundle.js",
-        path: path.resolve(__dirname, "app"),
-        publicPath: isProd ? "/static/" : `http://localhost:${WDS_PORT}/app/`,
+        path: path.resolve(__dirname, "dist"),
+        publicPath: isProd ? "/static/" : `http://localhost:${WDS_PORT}/dist/`,
     },
     module: {
         rules: [
